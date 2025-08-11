@@ -206,6 +206,9 @@ html {
   .primary-outline-primary--hover:hover {
     color: #fff;
     background: #efba6c; }
+    html {
+  scroll-behavior: smooth;
+}
 
 body {
   line-height: 1.7;
@@ -476,7 +479,9 @@ h1, h2, h3, h4, h5,
       color: #efba6c !important; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
-      display: inline-block; }
+      display: inline-block;
+
+    }
     .site-navbar .site-navigation .site-menu > li {
       display: inline-block; }
       .site-navbar .site-navigation .site-menu > li > a {
@@ -487,7 +492,8 @@ h1, h2, h3, h4, h5,
         display: inline-block;
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #efba6c; }
+          color: #efba6c;
+        text-shadow: 1px 1px black; }
       .site-navbar .site-navigation .site-menu > li.active > a {
         color: #efba6c !important; }
     .site-navbar .site-navigation .site-menu .has-children {
