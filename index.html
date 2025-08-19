@@ -59,6 +59,74 @@ myanmarDate {
   z-index: 11111111111;
 }
 
+     .services-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            position: relative;
+        }
+        
+        h1::after {
+            content: '';
+            display: block;
+            width: 200px;
+            height: 4px;
+            background: #3498db;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .services-list {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-item {
+            background-color: #f8fafc;
+            border-left: 4px solid #3498db;;
+            padding: 20px;
+            border-radius: 0 4px 4px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+          cursor: pointer;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            background-color: #e8f4fc;
+        }
+        
+        .service-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+        
+        .service-location {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 
   </head>
@@ -108,6 +176,8 @@ myanmarDate {
               
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                    <!-- <a href="index.html" class="">Home</a>
+                    <a href="index.html" class="">Home</a> -->
                   <div id="myanmarDate"></div>
 
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
@@ -239,6 +309,9 @@ Founder_ Yee Mon Mon Aung
 Office - Myanmar 
 Industry_ Travel & tourism
             </p>
+            <!--  -->
+
+            <!--  -->
           </div>
           <div class="col-md-6" data-aos="fade-right">
             <div class="listing-image owl-carousel"> 
@@ -254,6 +327,43 @@ Industry_ Travel & tourism
           </div>
         </div>
       </div>
+    </div>
+    <!--  -->
+     <div class="services-container">
+        <h1>Scopes of Services</h1>
+        <ul class="services-list">
+            <li class="service-item">
+                <div class="service-title">Ticketing Service</div>
+                <div class="service-location">World Wide</div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Hotel Booking</div>
+                <div class="service-location">World Wide</div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Car Rental Service</div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Visa/Passport Service</div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">HR Service</div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Air Cargo Service</div>
+                <div class="service-location">World Wide</div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Event Arrangement Service</div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Tour Guide Service</div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Tour Package Service</div>
+                <div class="service-location">Inbound/Outbound</div>
+            </li>
+        </ul>
     </div>
     <!--  -->
     <div class="site-section py-5" id="about">
@@ -799,7 +909,7 @@ Fly Marigold ကိုဖုံးလေးသာဆက်ကြိုက်န�
        
         <div class="row">
           <div class="col-lg-8 mb-5" >
-            <form action="#" method="post">
+            <!-- <form action="#" method="post">
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
                   <input type="text" class="form-control" placeholder="First name">
@@ -825,7 +935,9 @@ Fly Marigold ကိုဖုံးလေးသာဆက်ကြိုက်န�
                   <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Send Message">
                 </div>
               </div>
-            </form>
+            </form> -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7636.635895358181!2d96.17769272715337!3d16.860159237875312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1930405dc7a19%3A0xb2c8e2e9fdf5fe1!2sWard%2033%2C%20Yangon!5e0!3m2!1sen!2smm!4v1755056334279!5m2!1sen!2smm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
           </div>
           <div class="col-lg-4 ml-auto " >
             <div class="bg-white p-3 p-md-5">Join
@@ -845,6 +957,10 @@ Fly Marigold ကိုဖုံးလေးသာဆက်ကြိုက်န�
 
  <li class="d-block mb-3"><span class="d-block text-black">Outbound license Number:</span><span><a href="#">  T/O(YGN)1095</a>
 </span></li>
+ <div class="">
+<a href="mailto:ym.mmnbiz4@gmail.com" class="btn btn-block btn-primary text-white">Send Email</a></div>
+
+
 
 
 
