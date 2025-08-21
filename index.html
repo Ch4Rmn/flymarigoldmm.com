@@ -746,138 +746,60 @@ Industry_ Travel & tourism
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100 ">
-              <div class="listing-image owl-carousel ">
-              <div>
-                <a href="">
-                  <img src="images/t1.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <img src="images/t2.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <img src="images/t3.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <img src="images/t4.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <img src="images/t5.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-                <div>
-                <a href="">
-                  <img src="images/t6.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-              </div>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="">Bangkok tour</a></h2>
-                <!-- <span class="meta d-inline-block mb-3">July 17, 2019 <span class="mx-2">by</span> <a href="#">Admin</a></span> -->
-                                 <span class="meta d-inline-block mb-3">Aug 11, 2025 </span>
+        <div class="row" id="posts-container">
+</div>
 
-                <p>ချစ်တဲ့ဧည့်သည်တော်တွေကို Bangkok tour ပို့ပေးတာပါရှင့်…ချစ်စရာမိသားစုလေး ပျော်ရွှင်တာလေးတွေ့လို့ ဝမ်းသာမိပါတယ်ရှင့်။🥰✈️
-စေတနာအရင်းခံ ဝါသနာအရင်းခံဖြင့် ဝန်ဆောင်မှုပေးနေပါတယ်နော်.. ဆန်းပြားတဲ့ program တွေ၊ လှပရင်ခုန်စရာကောင်းတဲ့နေရာတွေ၊ ကားအကောင်းစား၊ ဟိုတယ်ကောင်း၊ အကောင်းဆုံး စားသောက်ဆိုင်ကြီးများ၊ အတွေ့ကြုံရှိ guideများဖြင့် tour package လေးတွေစီစဉ်ပေးနေပါတယ်ရှင့်🙏
-24 hrs service ဖြစ်လို့ အချိန်မရွေးဆက်သွယ်နိုင်ပါတယ်ရှင့်
-ခရီးသွားမယ်ဆိုရင် တစ်နေရာတည်းမှာ အားလုံးရပါမယ်ရှင့်🙏🥰
-<br><br>
-Fly Marigold Travels & Tours
-<a href="tel:09740015022" style="color: #1a27e3;">09740015022</a>
-</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-                 <div class="listing-image owl-carousel ">
-              <div>
-                <a href="">
-                  <img src="images/viet1.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-              <div>
-                <a href="">
-                         <img src="images/viet2.jpg" alt="Image" class="img-fluid">
+<script>
+fetch("https://flymarigoldmm.com/wp-json/wp/v2/posts?per_page=6&_embed")
+  .then(response => response.json())
+  .then(posts => {
+    let container = document.getElementById("posts-container");
+    posts.forEach(post => {
+      // featured image (if exists)
+      // let imageUrl = post._embedded['wp:featuredmedia'] 
+      //                 ? post._embedded['wp:featuredmedia'][0].source_url 
+      //                 : "images/t1.jpg"; // fallback
+       let image = "images/defaultTrip.jpeg";
+        if (post._embedded['wp:featuredmedia']) {
+          image = post._embedded['wp:featuredmedia'][0].source_url;
+        }
 
-                </a>
-              </div>
-              <div>
-                <a href="">
-                                  <img src="images/viet3.jpg" alt="Image" class="img-fluid">
+      // date
+      let date = new Date(post.date);
+      let options = { year: 'numeric', month: 'short', day: 'numeric' };
+      let formattedDate = date.toLocaleDateString('en-US', options);
 
-                </a>
-              </div>
-              <div>
-                <a href="">
-                                <img src="images/viet4.jpg" alt="Image" class="img-fluid">
+      // excerpt
+      let excerpt = post.excerpt.rendered.replace(/<[^>]+>/g, "").substring(0, 200) + "...";
 
-                </a>
-              </div>
-              
-              </div>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="">Bali</a></h2>
-                <span class="meta d-inline-block mb-3">Aug 11, 2025 </span>
-                <p>ချစ်ရတဲ့ customer group ကြီးကို ၃ညအိပ် ၄ ရက်ခရီး (Vietnam )ခရီးစဉ်ကြီးကို လိုက်ပို့ပေးခဲ့တာပါရှင့် 🥰🥰✈️✈️
-20.12.2024~23.12.2024 အမှတ်တရ ✈️✈️🥰🥰🇻🇳🇻🇳🇻🇳🚢🚢🚢🏡🏡❄️❄️❄️
-၇ရက်သားသမီးများအားလုံး စိတ်ချမ်းသာ ကိုယ်ကျန်းမာကြပါစေရှင့်🙏🙏🙏
-Merry Christmas 🎄🎁 
-Fly Marigold Travels & Tours</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-                 <div class="listing-image owl-carousel ">
-              <div>
-                <a href="">
-                  <img src="images/pago1.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <img src="images/pago2.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <img src="images/pago3.jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
+      // build HTML
+      let html = `
+        <div class="col-lg-4 col-md-6 mb-4">
+          
              
+            <div class="post-entry-1-contents">
+              <div class="post-entry-1 h-100 ">
+               <div>
+                <a href="${post.link}">
+                  ${image ? `<img src="${image}" alt="Image" class="img-fluid" style="height:380px !important">` : ''}
+                </a>
               </div>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="">Bagon Pagoda</a></h2>
-                <span class="meta d-inline-block mb-3">Aug 11, 2025 </span>
-                <p>အရမ်းကိုပျော်စရာကောင်းပါတယ်နော် 🥰🥰
-မင်မင်တောင် အရမ်းသွားချင်နေပီနော် 😊😊💕
-ခရီးစဉ် စ၊လယ်၊ဆုံး ပျော်ရွှင်စေရပါမယ်ရှင့်🙏💕🎈
-“ခရီးစဉ်တိုင်း ပျော်ရွှင်ဖို့ Fly Marigold နဲ့ သွားကြစို့” ✈️🚗🚢
-အလုပ်တွေပင်ပန်းနေလား ???
-စိတ်ညစ်စရာတွေရှိလား???
-လူမှုရေးပြသနာတွေရှိလား???
-ခရီးဘယ်သွားရမလဲ ဘယ်လိုလုပ်ရမလဲဆိုတဲ့ အကူညီလိုနေပီလား ??
-Budget မလောက်မှာစိုးရိမ်နေလား???
-Fly Marigold ကိုဖုံးလေးသာဆက်ကြိုက်နော်
-ခရီးသည်တွေအကြိုက်ညှိနှိုင်း ခရီးစဉ်ဆွဲပေးမယ်နော်🥰🥰🥰</p>
-              </div>
+              <br>
+              <h2><a href="${post.link}">${post.title.rendered}</a></h2>
+              <span class="meta d-inline-block mb-3">${formattedDate}</span>
+              <p>${excerpt}<a href="${post.link}" target="_blank" style="color: #007bff;float:right">Read More</a></p>
+                            
             </div>
           </div>
         </div>
+      `;
+      container.innerHTML += html;
+    });
+  })
+  .catch(error => console.error("Error fetching posts:", error));
+</script>
+
+        <!--  -->
       </div>
     </div>
     
