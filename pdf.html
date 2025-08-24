@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Flipbook Example</title>
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+  <!-- jQuery (Turn.js လိုအပ်) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Turn.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      background: #ddd;
+    }
+    #flipbook {
+      width: 800px;
+      height: 600px;
+    }
+    #flipbook canvas {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="flipbook"></div>
+
+  <script>
+    // Worker setup
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+
+    // PDF File
+    const url = "FLY Marigold flyer.pdf";
+
+    // Load PDF
+    pdfjsLib.getDocument(url).promise.then(function(pdf) {
+      console.log("PDF loaded. Total Pages: " + pdf.numPages);
+
+      let promises = [];
+
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        promises.push(
+          pdf.getPage(pageNum).then(function(page) {
+            const viewport = page.getViewport({ scale: 1.2 });
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d");
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+            return page.render({ canvasContext: context, viewport: viewport }).promise.then(() => {
+              return canvas;
+            });
+          })
+        );
+      }
+
+      Promise.all(promises).then(function(pages) {
+        pages.forEach(function(canvas) {
+          const pageDiv = document.createElement("div");
+          pageDiv.appendChild(canvas);
+          document.getElementById("flipbook").appendChild(pageDiv);
+        });
+
+        // Turn.js apply
+        $("#flipbook").turn({
+          width: 800,
+          height: 600,
+          autoCenter: true
+        });
+      });
+    });
+  </script>
+</body>
+</html>
